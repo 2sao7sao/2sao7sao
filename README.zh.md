@@ -29,7 +29,7 @@
 
 | 层 | 仓库 | 当前状态 | 明确边界 |
 | --- | --- | --- | --- |
-| 人的记忆 | [EvolveMemory](https://github.com/2sao7sao/EvolveMemory) | 研究原型：v2 治理存储、读取硬控制、有界真实 DeepSeek 宿主、263 个本地测试 | 体验验收 U01–U08 未通过；真实 24 轮试验暴露了偏好纠正缺陷 |
+| 人的记忆 | [EvolveMemory](https://github.com/2sao7sao/EvolveMemory) | 研究原型：v2 治理存储、读取硬控制、有界真实 DeepSeek 宿主；`main` 上 157 个测试，宿主分支上 263 个 | 体验验收 U01–U08 未通过；真实 24 轮试验暴露了偏好纠正缺陷 |
 | 可执行知识 | [EvolveKB](https://github.com/2sao7sao/EvolveKB) | 本地原型，已打 tag `v0.4.0`，[文档站](https://2sao7sao.github.io/EvolveKB/)已上线，97 个测试 | 尚无真实文档的全链路运行；不宣称生产可用或检索更优 |
 | 判据 | [Lean-4-Agent-Eval](https://github.com/2sao7sao/Lean-4-Agent-Eval) | M0–M2 已实现（M2 为离线）：55 个场景、独立参考复算、11 个 Lean 定理 | 定理只覆盖判定聚合；真实 Agent 执行与 trace 采集属于 M3，尚未建设 |
 
@@ -67,7 +67,7 @@ evidence → playbook → trace → proposal → rollback 全链路；`v0.4.0` �
 
 ## 这里不证明什么
 
-- **测试全绿不等于理解正确。** EvolveMemory 263 个测试通过，真实对话里仍生成了错误画像。
+- **测试全绿不等于理解正确。** EvolveMemory 在 `main` 上 157 个测试通过，真实 24 轮对话仍生成了错误画像；修复只存在于 Draft 分支，尚未进入 release。
 - **框架发布不等于质量。** EvolveKB 只是原型，它自己的 README 也这么写。
 - **形式化定理不等于实现正确。** Lean-4-Agent-Eval 的 11 个定理只覆盖判定聚合，Python 实现、
   数据真实性、PPT 质量都在证明范围之外。

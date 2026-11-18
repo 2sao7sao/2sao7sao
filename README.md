@@ -32,7 +32,7 @@ verdict   --> evaluation  Lean-4-Agent-Eval   which claims are verified, and whe
 
 | Layer | Repository | State today | Explicit boundary |
 | --- | --- | --- | --- |
-| Memory of a person | [EvolveMemory](https://github.com/2sao7sao/EvolveMemory) | Research prototype: governed v2 storage, read controls, bounded real DeepSeek host, 263 local tests | Experience acceptance U01–U08 is not passed; a real 24-turn trial exposed preference-correction defects |
+| Memory of a person | [EvolveMemory](https://github.com/2sao7sao/EvolveMemory) | Research prototype: governed v2 storage, read controls, bounded real DeepSeek host; 157 tests on `main`, 263 on the draft host branch | Experience acceptance U01–U08 is not passed; a real 24-turn trial exposed preference-correction defects |
 | Executable knowledge | [EvolveKB](https://github.com/2sao7sao/EvolveKB) | Local prototype, tag `v0.4.0`, [documentation site](https://2sao7sao.github.io/EvolveKB/) live, 97 tests | No real-document end-to-end run yet; no production or retrieval-superiority claim |
 | Verification | [Lean-4-Agent-Eval](https://github.com/2sao7sao/Lean-4-Agent-Eval) | M0–M2 implemented (M2 offline): 55 scenarios, independent reference recomputation, 11 Lean theorems | The theorems cover verdict aggregation only; real agent execution and trace capture are M3 and not built |
 
@@ -76,8 +76,9 @@ so the project proves its own books balance, not that it can grade an agent.
 
 ## What this does not prove
 
-- A green test suite does not prove natural understanding. EvolveMemory's 263 tests pass
-  while a real conversation produced wrong profiles.
+- A green test suite does not prove natural understanding. EvolveMemory passes 157 tests
+  on `main` while a real 24-turn conversation still produced wrong profiles; the fix sits
+  in a draft branch, not a release.
 - A published framework does not prove retrieval or execution quality. EvolveKB ships a
   prototype, and its own README says so.
 - A formal theorem does not prove the implementation. Lean-4-Agent-Eval's 11 theorems
